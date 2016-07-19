@@ -32,7 +32,7 @@ function readInfo() {
         var array = data.toString().split("\n");
 
         for (i in array) {
-            console.log(array[i]);
+            console.log(array[i] + '\n');
         }
     });
 }
