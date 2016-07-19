@@ -16,10 +16,26 @@ app.engine('html', engines.hogan);
 app.set('views', __dirname + '/templates');
 app.use(express.static('public'));
 
+var fs = require('fs');
+
 app.get('/', function (req, res) {
-    sendMessage('4016636022');
+    readInfo();
     res.render('index.html');
 });
+
+function readInfo() {
+    fs.readFile('test.txt', function (err, data) {
+        if (err) {
+            console.log('Can\'t read file');
+        }
+
+        var array = data.toString().split("\n");
+
+        for (i in array) {
+            console.log(array[i]);
+        }
+    });
+}
 
 function sendMessage(phoneNum) {
 
@@ -33,9 +49,10 @@ function sendMessage(phoneNum) {
             console.error(err.message);
         }
 
-        console.log("message sent");
+        console.log('message sent');
     });
 }
+
 
 app.listen(process.env.PORT, function () {
     console.log('runDvous app listening on port ' + process.env.PORT);
