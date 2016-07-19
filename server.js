@@ -17,14 +17,15 @@ app.set('views', __dirname + '/templates');
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
+    sendMessage('4016636022');
     res.render('index.html');
 });
 
-function sendMessage() {
+function sendMessage(phoneNum) {
 
     client.messages.create({
-        body: 'Hello from Linda :P',
-        to: '+14016636022',  // Text this number
+        body: 'Hello from Linda. Heroku test',
+        to: '+1' + phoneNum,  // Text this number
         from: '+14017533904' // From a valid Twilio number
     }, function (err, message) {
 
