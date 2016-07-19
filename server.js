@@ -8,8 +8,6 @@ var authToken = '6b7dfc77a039c8d60461a562441fdeb0';   // Your Auth Token from ww
 var twilio = require('twilio');
 var client = new twilio.RestClient(accountSid, authToken);
 
-var twilio_node = require("twilio-node/lib");
-
 var express = require('express');
 var app = express();
 
