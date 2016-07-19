@@ -33,7 +33,6 @@ function readInfo() {
 
         for (i in array) {
             console.log(array[i]);
-            console.log("****");
         }
     });
 }
