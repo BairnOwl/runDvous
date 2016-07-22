@@ -47,6 +47,8 @@ function readInfo() {
                 phoneNumber: info[2]
 
             });
+
+            console.log(customers);
         }
 
         return customers;
