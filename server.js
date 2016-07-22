@@ -20,6 +20,7 @@ var fs = require('fs');
 
 app.get('/', function (req, res) {
     var customers = readInfo();
+    console.log(customers);
     res.render('index.html', {customers: customers});
 });
 
@@ -36,8 +37,6 @@ function readInfo() {
         var array = data.toString().split("\n");
         var customers = [];
 
-        console.log(array);
-
         for (i in array) {
 
             var info = array[i].split(";");
@@ -48,8 +47,6 @@ function readInfo() {
                 phoneNumber: info[2]
 
             });
-
-            console.log(customers);
         }
 
         return customers;
