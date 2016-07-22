@@ -9,6 +9,7 @@
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <script src="dropzone.js"></script>
+    <script src="client.js"></script>
 </head>
 <body>
     <h1>runDvous</h1>
@@ -17,12 +18,14 @@
           class="dropzone"
           id="dropzone"></form>
 
+    <button id="sendMessages"></button>
     <table>
         <tr>
             <th>Name</th>
             <th>Address</th>
             <th>Phone Number</th>
         </tr>
+
         {{#customers}}
         <tr>
             <td>{{name}}</td>

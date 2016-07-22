@@ -45,37 +45,12 @@ function readInfo() {
     }
 
     return customers;
-
-    //
-    // fs.readFile('test.txt', function (err, data) {
-    //     if (err) {
-    //         console.log('Can\'t read file');
-    //     }
-    //
-    //     var array = data.toString().split("\n");
-    //     var customers = [];
-    //
-    //     for (i in array) {
-    //
-    //         var info = array[i].split(";");
-    //
-    //         customers.push({
-    //             name: info[0],
-    //             address: info[1],
-    //             phoneNumber: info[2]
-    //         });
-    //     }
-    //
-    //     console.log(customers);
-    //
-    //     return customers;
-    // });
 }
 
 function sendMessage(phoneNum) {
 
     client.messages.create({
-        body: 'Hello from Linda. Heroku test',
+        body: 'Hello, from Linda. :)',
         to: '+1' + phoneNum,  // Text this number
         from: '+14017533904' // From a valid Twilio number
     }, function (err, message) {
