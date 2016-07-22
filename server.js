@@ -37,7 +37,7 @@ function readInfo() {
         var customers = [];
 
         for (i in array) {
-            console.log(array[i]);
+            //console.log(array[i]);
 
             var info = array[i].split(";");
 
