@@ -23,6 +23,10 @@ app.get('/', function (req, res) {
     res.render('index.html');
 });
 
+app.post('/file-upload', function(req, res) {
+    console.log('uploading file');
+});
+
 function readInfo() {
     fs.readFile('test.txt', function (err, data) {
         if (err) {
