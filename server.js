@@ -36,8 +36,9 @@ function readInfo() {
         var array = data.toString().split("\n");
         var customers = [];
 
+        console.log(array);
+
         for (i in array) {
-            //console.log(array[i]);
 
             var info = array[i].split(";");
 
