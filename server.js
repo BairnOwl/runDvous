@@ -20,7 +20,7 @@ var fs = require('fs');
 
 app.get('/', function (req, res) {
     var customers = readInfo();
-    console.log(customers);
+    //console.log(customers);
     res.render('index.html', {customers: customers});
 });
 
@@ -45,9 +45,10 @@ function readInfo() {
                 name: info[0],
                 address: info[1],
                 phoneNumber: info[2]
-
             });
         }
+
+        console.log(customers);
 
         return customers;
     });
