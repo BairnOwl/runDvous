@@ -29,29 +29,49 @@ app.post('/file-upload', function(req, res) {
 });
 
 function readInfo() {
-    fs.readFile('test.txt', function (err, data) {
-        if (err) {
-            console.log('Can\'t read file');
-        }
 
-        var array = data.toString().split("\n");
-        var customers = [];
+    var array = fs.readFileSync('test.txt').toString().split("\n");
+    var customers = [];
 
-        for (i in array) {
+    for (i in array) {
 
-            var info = array[i].split(";");
+        var info = array[i].split(";");
 
-            customers.push({
-                name: info[0],
-                address: info[1],
-                phoneNumber: info[2]
-            });
-        }
+        customers.push({
+            name: info[0],
+            address: info[1],
+            phoneNumber: info[2]
+        });
+    }
 
-        console.log(customers);
+    console.log(customers);
 
-        return customers;
-    });
+    return customers;
+
+    //
+    // fs.readFile('test.txt', function (err, data) {
+    //     if (err) {
+    //         console.log('Can\'t read file');
+    //     }
+    //
+    //     var array = data.toString().split("\n");
+    //     var customers = [];
+    //
+    //     for (i in array) {
+    //
+    //         var info = array[i].split(";");
+    //
+    //         customers.push({
+    //             name: info[0],
+    //             address: info[1],
+    //             phoneNumber: info[2]
+    //         });
+    //     }
+    //
+    //     console.log(customers);
+    //
+    //     return customers;
+    // });
 }
 
 function sendMessage(phoneNum) {
