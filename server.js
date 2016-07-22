@@ -19,8 +19,8 @@ app.use(express.static('public'));
 var fs = require('fs');
 
 app.get('/', function (req, res) {
-    readInfo();
-    res.render('index.html');
+    var customers = readInfo();
+    res.render('index.html', {customers: customers});
 });
 
 app.post('/file-upload', function(req, res) {
@@ -34,10 +34,22 @@ function readInfo() {
         }
 
         var array = data.toString().split("\n");
+        var customers = [];
 
         for (i in array) {
             console.log(array[i]);
+
+            var info = array[i].split(";");
+
+            customers.push({
+                name: info[0],
+                address: info[1],
+                phoneNumber: info[2]
+
+            });
         }
+
+        return customers;
     });
 }
 

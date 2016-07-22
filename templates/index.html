@@ -16,5 +16,13 @@
     <form action="/file-upload"
           class="dropzone"
           id="dropzone"></form>
+
+    <table>
+        {{#customers}}
+            <td>{{name}}</td>
+            <td>{{address}}</td>
+            <td>{{phoneNumber}}</td>
+        {{/customers}}
+    </table>
 </body>
 </html>
