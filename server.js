@@ -19,9 +19,13 @@ app.use(express.static('public'));
 var fs = require('fs');
 
 app.get('/', function (req, res) {
+    res.render('index.html');
+});
+
+app.get('/schedule', function(req, res) {
     var customers = readInfo();
-    console.log(customers);
-    res.render('index.html', {customers: customers});
+    
+    res.render('schedule.html', {customers: customers});
 });
 
 app.post('/file-upload', function(req, res) {
