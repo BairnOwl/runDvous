@@ -61,5 +61,11 @@ function formatTime(time) {
         time -= 12;
     }
 
-    return Math.floor(time) + ':' + Math.ceil((time - Math.floor(time)) * 60) + ' ' + meridiem;
+    var mins = Math.ceil((time - Math.floor(time)) * 60);
+
+    if (mins == 0) {
+        mins = '00';
+    }
+
+    return Math.floor(time) + ':' + mins + ' ' + meridiem;
 }
