@@ -9,8 +9,6 @@ window.addEventListener('load', function() {
         if (req.readyState == 4 && req.status == 200) {
 
             var customers = JSON.parse(req.responseText);
-            
-            console.log(customers);
 
             var timeBlock = 0.5;
             var avgPerBlock;
@@ -25,6 +23,24 @@ window.addEventListener('load', function() {
             }
 
             var startTime = 9;
+            var endTime = 9 + timeBlock;
+
+            var counter = avgPerBlock;
+
+            for (var i = 0; i < customers.length; i++) {
+
+                customers[i]['ETA'] = formatTime(startTime) + ' - ' + formatTime(endTime);
+
+                counter--;
+
+                if (counter == 0) {
+                    counter = avgPerBlock;
+                    startTime = endTime;
+                    endTime = startTime + timeBlock;
+                }
+            }
+
+            console.log(customers);
         }
     };
 
@@ -33,3 +49,17 @@ window.addEventListener('load', function() {
     req.send();
 
 }, false);
+
+function formatTime(time) {
+    var meridiem = 'AM';
+
+    if (time >= 12) {
+        meridiem = 'PM';
+    }
+
+    if (time >= 13) {
+        time -= 12;
+    }
+
+    return Math.floor(time) + ':' + Math.ceil((time - Math.floor(time)) * 60) + ' ' + meridiem;
+}
