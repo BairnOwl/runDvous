@@ -9,6 +9,8 @@ window.addEventListener('load', function() {
         if (req.readyState == 4 && req.status == 200) {
 
             var customers = JSON.parse(req.responseText);
+            
+            console.log(customers);
 
             var timeBlock = 0.5;
             var avgPerBlock;

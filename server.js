@@ -24,8 +24,14 @@ app.get('/', function (req, res) {
 
 app.get('/schedule', function(req, res) {
     var customers = readInfo();
-    
+
     res.render('schedule.html', {customers: customers});
+});
+
+app.get('/schedule/data', function(req, res) {
+    var customers = readInfo();
+
+    res.json(customers);
 });
 
 app.post('/file-upload', function(req, res) {
