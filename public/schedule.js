@@ -63,8 +63,8 @@ function formatTime(time) {
 
     var mins = Math.ceil((time - Math.floor(time)) * 60);
 
-    if (mins == 0) {
-        mins = '00';
+    if (mins < 10) {
+        mins = '0' + mins;
     }
 
     return Math.floor(time) + ':' + mins + ' ' + meridiem;
