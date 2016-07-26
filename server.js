@@ -93,6 +93,6 @@ function sendMessage(phoneNum) {
 }
 
 
-app.listen(process.env.PORT, function () {
+server.listen(process.env.PORT, function () {
     console.log('runDvous app listening on port ' + process.env.PORT);
 });
