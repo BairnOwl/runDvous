@@ -54,6 +54,7 @@ window.addEventListener('load', function() {
             console.log(customers);
 
             $('#sendMessages').on('click', function() {
+                $('#sendMessages').attr('disabled', 'disabled');
                 requestStatus(customers);
             });
         }
@@ -65,7 +66,7 @@ window.addEventListener('load', function() {
 
     socket.on('addStatus', function(phoneNumber, status) {
         phoneNumber = phoneNumber.replace('+', '');
-        
+
         if (status == 1) {
             $('#' + phoneNumber).append('<td class="status1">YES</td>');
         } else if (status == 2) {
