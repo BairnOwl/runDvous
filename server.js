@@ -11,6 +11,8 @@ var client = new twilio.RestClient(accountSid, authToken);
 var express = require('express');
 var app = express();
 
+var bodyParser = require('body-parser');
+
 var engines = require('consolidate');
 app.engine('html', engines.hogan);
 app.set('views', __dirname + '/templates');
@@ -21,6 +23,9 @@ var fs = require('fs');
 var http = require('http');
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 io.sockets.on('connection', function(socket) {
     socket.on('message', function(customerInfo) {
@@ -50,7 +55,7 @@ app.get('/schedule/data', function(req, res) {
 });
 
 app.post('/incoming', function(req, res) {
-    console.log('incoming: ' + req.params.From + ', ' + res.params.From);
+    console.log('incoming: ' + req.params);
 });
 
 app.post('/file-upload', function(req, res) {
