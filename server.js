@@ -74,7 +74,7 @@ app.post('/incoming', function(req, res) {
     }
 });
 
-app.post('/file-upload', upload.single('schedule'), function(req, res) {
+app.post('/file-upload', upload.single('file'), function(req, res) {
     console.log(req.files);
     res.render('schedule.html');
 });
