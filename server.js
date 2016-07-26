@@ -17,21 +17,31 @@ app.set('views', __dirname + '/templates');
 app.use(express.static('public'));
 
 var fs = require('fs');
+var phoneNumbers = [];
 
 app.get('/', function (req, res) {
     res.render('index.html');
 });
 
 app.get('/schedule', function(req, res) {
-    var customers = readInfo();
 
-    res.render('schedule.html', {customers: customers});
+    res.render('schedule.html');
 });
 
 app.get('/schedule/data', function(req, res) {
     var customers = readInfo();
 
+    for (var i = 0; i < customers.length; i++) {
+        phoneNumbers.push(customers[i]['phoneNumber']);
+    }
+
     res.json(customers);
+});
+
+app.get('/message', function(req, res) {
+    for (var i in phoneNumbers) {
+        sendMessage(phoneNumbers[i]);
+    }
 });
 
 app.post('/file-upload', function(req, res) {
@@ -43,7 +53,7 @@ function readInfo() {
     var array = fs.readFileSync('test.txt').toString().split("\n");
     var customers = [];
 
-    for (i in array) {
+    for (var i in array) {
 
         var info = array[i].split(";");
 
@@ -60,7 +70,7 @@ function readInfo() {
 function sendMessage(phoneNum) {
 
     client.messages.create({
-        body: 'Hello, from Linda. :)',
+        body: 'moar tests',
         to: '+1' + phoneNum,  // Text this number
         from: '+14017533904' // From a valid Twilio number
     }, function (err, message) {

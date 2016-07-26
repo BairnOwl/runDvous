@@ -52,7 +52,7 @@ window.addEventListener('load', function() {
             console.log(customers);
 
             $('#sendMessages').on('click', function() {
-                console.log('clicked');
+                requestStatus();
             });
         }
     };
@@ -81,4 +81,12 @@ function formatTime(time) {
     }
 
     return Math.floor(time) + ':' + mins + ' ' + meridiem;
+}
+
+function requestStatus() {
+    var req = new XMLHttpRequest();
+    
+    req.open('GET', '/message', true);
+    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    req.send();
 }
