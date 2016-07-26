@@ -52,7 +52,7 @@ window.addEventListener('load', function() {
             console.log(customers);
 
             $('#sendMessages').on('click', function() {
-
+                console.log('clicked');
             });
         }
     };
