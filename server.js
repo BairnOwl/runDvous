@@ -50,7 +50,18 @@ app.get('/schedule/data', function(req, res) {
 });
 
 app.post('/incoming', function(req, res) {
-    console.log('incoming: ' + req.body.From);
+    var phoneNumber = req.body.From;
+    var choice = parseInt(req.body.Body);
+
+    if (!isNaN(choice)) {
+        if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
+            socket.emit('addStatus', phoneNumber, choice);
+        } else {
+            sendErrorMessage(phoneNumber);
+        }
+    } else {
+        sendErrorMessage(phoneNumber);
+    }
 });
 
 app.post('/file-upload', function(req, res) {
@@ -98,6 +109,18 @@ function sendInitialMessage(name, phoneNumber, ETA) {
     //         console.error(err.message);
     //     }
     // });
+}
+
+function sendErrorMessage(phoneNumber) {
+    client.messages.create({
+        body: 'Please input the number 1, 2, 3, or 4',
+        to: phoneNumber,
+        from: '+14017533904'
+    }, function (err, message) {
+        if (err) {
+            console.error(err.message);
+        }
+    });
 }
 
 

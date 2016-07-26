@@ -63,6 +63,10 @@ window.addEventListener('load', function() {
     req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     req.send();
 
+    socket.on('addStatus', function(phoneNumber, status) {
+        console.log(phoneNumber + ': ' + status);
+    });
+
 }, false);
 
 function formatTime(time) {
