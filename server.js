@@ -57,9 +57,11 @@ app.get('/schedule/data', function(req, res) {
 app.post('/incoming', function(req, res) {
     var phoneNumber = req.body.From;
     var choice = parseInt(req.body.Body);
+    console.log(choice);
 
     if (!isNaN(choice)) {
         if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
+            console.log('sending to client');
             clientSocket.emit('addStatus', phoneNumber, choice);
         } else {
             sendErrorMessage(phoneNumber);
