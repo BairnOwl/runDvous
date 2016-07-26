@@ -72,7 +72,7 @@ app.post('/incoming', function(req, res) {
 });
 
 app.post('/file-upload', function(req, res) {
-    console.log(req.files);
+    console.log(req);
     res.render('schedule.html');
 });
 
