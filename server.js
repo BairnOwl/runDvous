@@ -40,22 +40,17 @@ app.get('/', function (req, res) {
 });
 
 app.get('/schedule', function(req, res) {
-
     res.render('schedule.html');
 });
 
 app.get('/schedule/data', function(req, res) {
     var customers = readInfo();
 
-    // for (var i = 0; i < customers.length; i++) {
-    //     phoneNumbers.push(customers[i]['phoneNumber']);
-    // }
-
     res.json(customers);
 });
 
 app.post('/incoming', function(req, res) {
-    console.log('incoming: ' + req.params.From);
+    console.log('incoming: ' + req.body.From);
 });
 
 app.post('/file-upload', function(req, res) {
@@ -79,22 +74,6 @@ function readInfo() {
     }
 
     return customers;
-}
-
-function sendMessage(phoneNum) {
-
-    client.messages.create({
-        body: 'moar tests',
-        to: phoneNum,  // Text this number
-        from: '+14017533904' // From a valid Twilio number
-    }, function (err, message) {
-
-        if (err) {
-            console.error(err.message);
-        }
-
-        console.log('message sent');
-    });
 }
 
 function sendInitialMessage(name, phoneNumber, ETA) {
