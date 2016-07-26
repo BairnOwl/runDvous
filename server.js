@@ -27,7 +27,12 @@ var io = require('socket.io').listen(server);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+var clientSocket;
+
 io.sockets.on('connection', function(socket) {
+
+    clientSocket = socket;
+
     socket.on('message', function(customerInfo) {
         for (var i in customerInfo) {
          sendInitialMessage(customerInfo[i]['name'], customerInfo[i]['phoneNumber'], customerInfo[i]['ETA']);
@@ -55,7 +60,7 @@ app.post('/incoming', function(req, res) {
 
     if (!isNaN(choice)) {
         if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
-            socket.emit('addStatus', phoneNumber, choice);
+            clientSocket.emit('addStatus', phoneNumber, choice);
         } else {
             sendErrorMessage(phoneNumber);
         }
