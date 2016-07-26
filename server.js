@@ -25,7 +25,7 @@ var io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket) {
     socket.on('message', function(customerInfo) {
         for (var i in customerInfo) {
-         console.log(customerInfo[i]['name']);
+         sendInitialMessage(customerInfo[i]['name'], customerInfo[i]['phoneNumber'], customerInfo[i]['ETA']);
         }
     });
 });
@@ -49,11 +49,9 @@ app.get('/schedule/data', function(req, res) {
     res.json(customers);
 });
 
-// app.get('/message', function(req, res) {
-//     for (var i in phoneNumbers) {
-//         sendMessage(phoneNumbers[i]);
-//     }
-// });
+app.post('/incoming', function(req, res) {
+
+});
 
 app.post('/file-upload', function(req, res) {
     console.log('uploading file');
@@ -91,6 +89,28 @@ function sendMessage(phoneNum) {
         }
 
         console.log('message sent');
+    });
+}
+
+function sendInitialMessage(name, phoneNumber, ETA) {
+    client.messages.create({
+        body: 'Hi, ' + name + '! Your package will arrive today around ' + ETA,
+        to: phoneNumber,  // Text this number
+        from: '+14017533904' // From a valid Twilio number
+    }, function (err, message) {
+        if (err) {
+            console.error(err.message);
+        }
+    });
+
+    client.messages.create({
+        body: 'Are you home at this time? Reply: 1 for YES, 2 for NO (come back another day), 3 for NO (leave my package outside), 4 for NO (send to my neighbor)',
+        to: phoneNumber,  // Text this number
+        from: '+14017533904' // From a valid Twilio number
+    }, function (err, message) {
+        if (err) {
+            console.error(err.message);
+        }
     });
 }
 
