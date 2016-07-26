@@ -27,6 +27,9 @@ var io = require('socket.io').listen(server);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
+
 var clientSocket;
 
 io.sockets.on('connection', function(socket) {
@@ -71,8 +74,8 @@ app.post('/incoming', function(req, res) {
     }
 });
 
-app.post('/file-upload', function(req, res) {
-    console.log(req);
+app.post('/file-upload', upload.single('schedule'), function(req, res) {
+    console.log(req.files);
     res.render('schedule.html');
 });
 
