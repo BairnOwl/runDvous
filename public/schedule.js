@@ -40,7 +40,19 @@ window.addEventListener('load', function() {
                 }
             }
 
+            for (var i = 0; i < customers.length; i++) {
+                $('#customerTable').append('<tr id="'+ customers[i]['phoneNumber'] + '">' +
+                    '<td>' + customers[i]['name'] + '</td>' +
+                    '<td>' + customers[i]['address'] + '</td>' +
+                    '<td>' + customers[i]['phoneNumber'] + '</td>' +
+                    '</tr>');
+            }
+
             console.log(customers);
+
+            $('#sendMessages').on('click', function() {
+
+            });
         }
     };
 
