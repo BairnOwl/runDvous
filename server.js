@@ -77,7 +77,10 @@ app.post('/file-upload', upload.single('file'), function(req, res) {
     console.log('RECEIVED A REQUEST');
     console.log(req.file);
 
-    customers = readInfo(req.file['path']);
+    if (req.file != undefined) {
+        console.log('finding customers');
+        customers = readInfo(req.file['path']);
+    }
 
     res.render('schedule.html');
 });
