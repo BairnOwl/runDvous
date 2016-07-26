@@ -45,6 +45,7 @@ window.addEventListener('load', function() {
                     '<td>' + customers[i]['name'] + '</td>' +
                     '<td>' + customers[i]['address'] + '</td>' +
                     '<td>' + customers[i]['phoneNumber'] + '</td>' +
+                    '<td>' + customers[i]['ETA'] + '</td>' +
                     '</tr>');
             }
 

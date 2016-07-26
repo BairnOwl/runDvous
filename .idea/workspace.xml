@@ -53,21 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schedule.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="schedule.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/schedule.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+            <state relative-caret-position="225">
+              <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schedule.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="schedule.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/schedule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+            <state relative-caret-position="345">
+              <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -114,8 +114,8 @@
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/public/index.js" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/public/schedule.js" />
         <option value="$PROJECT_DIR$/templates/schedule.html" />
+        <option value="$PROJECT_DIR$/public/schedule.js" />
       </list>
     </option>
   </component>
@@ -292,12 +292,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1468346673343</updated>
-      <workItem from="1468346674652" duration="28395000" />
+      <workItem from="1468346674652" duration="28514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28395000" />
+    <option name="totallyTimeSpent" value="28514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="23" width="1275" height="706" extended-state="0" />
@@ -395,18 +395,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/schedule.js">
+    <entry file="file://$PROJECT_DIR$/templates/schedule.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+        <state relative-caret-position="225">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/schedule.html">
+    <entry file="file://$PROJECT_DIR$/public/schedule.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        <state relative-caret-position="345">
+          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
           <folding />
         </state>
       </provider>
