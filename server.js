@@ -50,7 +50,7 @@ app.get('/schedule/data', function(req, res) {
 });
 
 app.post('/incoming', function(req, res) {
-
+    console.log('incoming: ' + req + ', ' + res);
 });
 
 app.post('/file-upload', function(req, res) {
@@ -104,7 +104,7 @@ function sendInitialMessage(name, phoneNumber, ETA) {
     });
 
     client.messages.create({
-        body: 'Are you home at this time? Reply: 1 for YES, 2 for NO (come back another day), 3 for NO (leave my package outside), 4 for NO (send to my neighbor)',
+        body: 'Are you home at this time? Reply: 1 for YES, 2 for NO (come back another day), 3 for NO (leave my package outside), and 4 for NO (send to my neighbor)',
         to: phoneNumber,  // Text this number
         from: '+14017533904' // From a valid Twilio number
     }, function (err, message) {
