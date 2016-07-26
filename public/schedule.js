@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
             }
 
             for (var i = 0; i < customers.length; i++) {
-                $('#customerTable').append('<tr id="'+ customers[i]['phoneNumber'] + '">' +
+                $('#customerTable').append('<tr id="'+ customers[i]['phoneNumber'].replace('+', '') + '">' +
                     '<td>' + customers[i]['name'] + '</td>' +
                     '<td>' + customers[i]['address'] + '</td>' +
                     '<td>' + customers[i]['phoneNumber'] + '</td>' +
@@ -64,6 +64,8 @@ window.addEventListener('load', function() {
     req.send();
 
     socket.on('addStatus', function(phoneNumber, status) {
+        phoneNumber = phoneNumber.replace('+', '');
+        
         if (status == 1) {
             $('#' + phoneNumber).append('<td class="status1">YES</td>');
         } else if (status == 2) {
