@@ -31,6 +31,7 @@ var multer  = require('multer')
 var upload = multer({ dest: 'uploads/' })
 
 var clientSocket;
+var customers;
 
 io.sockets.on('connection', function(socket) {
 
@@ -52,8 +53,6 @@ app.get('/schedule', function(req, res) {
 });
 
 app.get('/schedule/data', function(req, res) {
-    var customers = readInfo();
-
     res.json(customers);
 });
 
@@ -75,13 +74,14 @@ app.post('/incoming', function(req, res) {
 });
 
 app.post('/file-upload', upload.single('file'), function(req, res) {
-    console.log(req.file);
+    customers = readInfo(req.file.path);
+
     res.render('schedule.html');
 });
 
-function readInfo() {
+function readInfo(filePath) {
 
-    var array = fs.readFileSync('test.txt').toString().split("\n");
+    var array = fs.readFileSync(filePath).toString().split("\n");
     var customers = [];
 
     for (var i in array) {
