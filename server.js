@@ -55,7 +55,7 @@ app.get('/schedule/data', function(req, res) {
 });
 
 app.post('/incoming', function(req, res) {
-    console.log('incoming: ' + req.params);
+    console.log('incoming: ' + req.params.From);
 });
 
 app.post('/file-upload', function(req, res) {
@@ -99,7 +99,9 @@ function sendMessage(phoneNum) {
 
 function sendInitialMessage(name, phoneNumber, ETA) {
     client.messages.create({
-        body: 'Hi, ' + name + '! Your package will arrive today around ' + ETA,
+        body: 'Hi, ' + name + '! Your package will arrive today around ' + ETA + '. ' +
+        'Are you home at this time? Reply: 1 for YES, 2 for NO (come back another day), ' +
+        '3 for NO (leave my package outside), and 4 for NO (send to my neighbor)',
         to: phoneNumber,  // Text this number
         from: '+14017533904' // From a valid Twilio number
     }, function (err, message) {
@@ -108,15 +110,15 @@ function sendInitialMessage(name, phoneNumber, ETA) {
         }
     });
 
-    client.messages.create({
-        body: 'Are you home at this time? Reply: 1 for YES, 2 for NO (come back another day), 3 for NO (leave my package outside), and 4 for NO (send to my neighbor)',
-        to: phoneNumber,  // Text this number
-        from: '+14017533904' // From a valid Twilio number
-    }, function (err, message) {
-        if (err) {
-            console.error(err.message);
-        }
-    });
+    // client.messages.create({
+    //     body: 'Are you home at this time? Reply: 1 for YES, 2 for NO (come back another day), 3 for NO (leave my package outside), and 4 for NO (send to my neighbor)',
+    //     to: phoneNumber,  // Text this number
+    //     from: '+14017533904' // From a valid Twilio number
+    // }, function (err, message) {
+    //     if (err) {
+    //         console.error(err.message);
+    //     }
+    // });
 }
 
 
