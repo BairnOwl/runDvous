@@ -17,7 +17,16 @@ app.set('views', __dirname + '/templates');
 app.use(express.static('public'));
 
 var fs = require('fs');
-var phoneNumbers = [];
+
+var http = require('http');
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
+
+io.sockets.on('connection', function(socket) {
+    socket.on('message', function(customerInfo) {
+        console.log(customerInfo);
+    });
+});
 
 app.get('/', function (req, res) {
     res.render('index.html');
@@ -31,18 +40,18 @@ app.get('/schedule', function(req, res) {
 app.get('/schedule/data', function(req, res) {
     var customers = readInfo();
 
-    for (var i = 0; i < customers.length; i++) {
-        phoneNumbers.push(customers[i]['phoneNumber']);
-    }
+    // for (var i = 0; i < customers.length; i++) {
+    //     phoneNumbers.push(customers[i]['phoneNumber']);
+    // }
 
     res.json(customers);
 });
 
-app.get('/message', function(req, res) {
-    for (var i in phoneNumbers) {
-        sendMessage(phoneNumbers[i]);
-    }
-});
+// app.get('/message', function(req, res) {
+//     for (var i in phoneNumbers) {
+//         sendMessage(phoneNumbers[i]);
+//     }
+// });
 
 app.post('/file-upload', function(req, res) {
     console.log('uploading file');

@@ -2,6 +2,8 @@
  * Created by bairnowl on 7/22/16.
  */
 
+var socket = io.connect();
+
 window.addEventListener('load', function() {
 
     var req = new XMLHttpRequest();
@@ -52,7 +54,7 @@ window.addEventListener('load', function() {
             console.log(customers);
 
             $('#sendMessages').on('click', function() {
-                requestStatus();
+                requestStatus(customers);
             });
         }
     };
@@ -83,10 +85,17 @@ function formatTime(time) {
     return Math.floor(time) + ':' + mins + ' ' + meridiem;
 }
 
-function requestStatus() {
-    var req = new XMLHttpRequest();
+function requestStatus(customers) {
+
+    var customerInfo = [];
     
-    req.open('GET', '/message', true);
-    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    req.send();
+    for (var i in customers) {
+        customerInfo.push({ 
+            name: customers[i]['name'],
+            phoneNumber: customers[i]['phoneNumber'],
+            ETA: customers[i]['ETA']
+        });
+    }
+
+    socket.emit('message', customerInfo);
 }
