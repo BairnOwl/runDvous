@@ -71,7 +71,7 @@ function sendMessage(phoneNum) {
 
     client.messages.create({
         body: 'moar tests',
-        to: '+1' + phoneNum,  // Text this number
+        to: phoneNum,  // Text this number
         from: '+14017533904' // From a valid Twilio number
     }, function (err, message) {
 
