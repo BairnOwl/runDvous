@@ -74,7 +74,7 @@ app.post('/incoming', function(req, res) {
 });
 
 app.post('/file-upload', upload.single('file'), function(req, res) {
-    customers = readInfo(req.file.path);
+    customers = readInfo(req.file['path']);
 
     res.render('schedule.html');
 });
