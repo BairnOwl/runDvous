@@ -2,7 +2,7 @@
  * Created by bairnowl on 7/22/16.
  */
 
-var socket = io();
+var socket = io.connect();
 
 window.addEventListener('load', function() {
 
