@@ -71,7 +71,7 @@ app.post('/incoming', function(req, res) {
     }
 });
 
-app.post('/file-upload', function(req, res) {
+app.get('/file-upload', function(req, res) {
     console.log('req.files');
 });
 
