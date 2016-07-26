@@ -48,7 +48,11 @@ app.get('/', function (req, res) {
     res.render('index.html');
 });
 
-app.get('/schedule', function(req, res) {
+app.post('/schedule', upload.single('file'), function(req, res) {
+    if (req.file != undefined) {
+        customers = readInfo(req.file['path']);
+    }
+
     res.render('schedule.html');
 });
 
@@ -71,18 +75,6 @@ app.post('/incoming', function(req, res) {
     } else {
         sendErrorMessage(phoneNumber);
     }
-});
-
-app.post('/file-upload', upload.single('file'), function(req, res) {
-    console.log('RECEIVED A REQUEST');
-    console.log(req.file);
-
-    if (req.file != undefined) {
-        console.log('finding customers');
-        customers = readInfo(req.file['path']);
-    }
-
-    res.render('schedule.html');
 });
 
 function readInfo(filePath) {
