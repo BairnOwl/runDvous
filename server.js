@@ -24,7 +24,9 @@ var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function(socket) {
     socket.on('message', function(customerInfo) {
-        console.log(customerInfo);
+        for (var i in customerInfo) {
+         console.log(customerInfo[i]['name']);
+        }
     });
 });
 
