@@ -64,7 +64,15 @@ window.addEventListener('load', function() {
     req.send();
 
     socket.on('addStatus', function(phoneNumber, status) {
-        console.log(phoneNumber + ': ' + status);
+        if (status == 1) {
+            $('#' + phoneNumber).append('<td class="status1">YES</td>');
+        } else if (status == 2) {
+            $('#' + phoneNumber).append('<td class="status2">NO, come back another day</td>');
+        } else if (status == 3) {
+            $('#' + phoneNumber).append('<td class="status3">NO, leave outside</td>');
+        } else if (status == 4) {
+            $('#' + phoneNumber).append('<td class="status4">NO, leave at neighbor</td>');
+        }
     });
 
 }, false);
