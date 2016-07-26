@@ -50,7 +50,7 @@ app.get('/schedule/data', function(req, res) {
 });
 
 app.post('/incoming', function(req, res) {
-    console.log('incoming: ' + req + ', ' + res);
+    console.log('incoming: ' + req.params.From + ', ' + res.params.From);
 });
 
 app.post('/file-upload', function(req, res) {
