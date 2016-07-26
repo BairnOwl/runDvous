@@ -74,8 +74,9 @@ app.post('/incoming', function(req, res) {
 });
 
 app.post('/file-upload', upload.single('file'), function(req, res) {
+    console.log('RECEIVED A REQUEST');
     console.log(req.file);
-    
+
     customers = readInfo(req.file['path']);
 
     res.render('schedule.html');
