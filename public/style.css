@@ -8,6 +8,10 @@ body {
     color: yellow;
 }
 
+h1 {
+    color: white;
+}
+
 .status1 {
     color: green;
 }
