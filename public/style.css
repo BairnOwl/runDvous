@@ -28,6 +28,20 @@ h1 {
 }
 
 #home {
+
+}
+
+#logoZone {
     width: 60%;
     margin: auto;
+}
+
+#uploadZone {
+    width: 40%;
+    margin: auto;
+}
+
+#logo {
+    height: 50%;
+    width: 50%;
 }
