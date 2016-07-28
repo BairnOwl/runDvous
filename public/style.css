@@ -32,12 +32,13 @@ h1 {
 }
 
 #logoZone {
+    border: 5px solid white;
     width: 60%;
     margin: auto;
 }
 
 #uploadZone {
-    width: 40%;
+    width: 25%;
     margin: auto;
 }
 
