@@ -26,3 +26,8 @@ h1 {
 .status4 {
     color: orange;
 }
+
+#home {
+    width: 60%;
+    margin: auto;
+}
