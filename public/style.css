@@ -42,6 +42,10 @@ h1 {
     margin: auto;
 }
 
+#uploadButton {
+    margin-bottom: 20px;
+}
+
 #logo {
     float: left;
     height: 20%;
