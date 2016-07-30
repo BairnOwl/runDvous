@@ -31,6 +31,7 @@ h1 {
 #home {
     position: absolute;
     z-index: 1;
+    border: 5px solid white;
 }
 
 #logoZone {
