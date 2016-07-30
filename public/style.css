@@ -51,5 +51,7 @@ h1 {
     display: inline-block;
     height: 15%;
     width: 15%;
+    border: 1px solid white;
+    margin-right: 2%;
 
 }
