@@ -60,7 +60,8 @@ h1 {
 /* Schedule page */
 
 #scheduleZone {
-    width: 80%;
+    width: 75%;
     margin: auto;
     background-color: white;
+    height: 100vh;
 }
