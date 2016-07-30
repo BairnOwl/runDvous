@@ -29,7 +29,7 @@ h1 {
 }
 
 #home {
-    position: relative;
+    position: absolute;
     z-index: 1;
 }
 
