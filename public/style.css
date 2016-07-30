@@ -30,6 +30,7 @@ h1 {
 
 #home {
     position: relative;
+    z-index: 1;
 }
 
 #logoZone {
