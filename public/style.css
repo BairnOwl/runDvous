@@ -33,7 +33,6 @@ h1 {
 }
 
 #logoZone {
-    border: 1px solid white;
     width: 60%;
     margin: 10% auto 5% auto;
     text-align: center;
@@ -52,6 +51,6 @@ h1 {
     display: inline-block;
     height: 15%;
     width: 15%;
-    margin-right: 10%;
+    margin-right: 5%;
 
 }
