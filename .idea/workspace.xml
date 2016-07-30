@@ -36,8 +36,8 @@
       <file leaf-file-name="dropzone.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/dropzone.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="177" column="31" selection-start-line="177" selection-start-column="31" selection-end-line="177" selection-end-column="31" />
+            <state relative-caret-position="285">
+              <caret line="179" column="39" selection-start-line="179" selection-start-column="39" selection-end-line="179" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -264,12 +264,12 @@
       <option name="presentableId" value="Default" />
       <updated>1468346673343</updated>
       <workItem from="1468346674652" duration="45863000" />
-      <workItem from="1469864460497" duration="3166000" />
+      <workItem from="1469864460497" duration="3234000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49029000" />
+    <option name="totallyTimeSpent" value="49097000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="23" width="1275" height="706" extended-state="0" />
@@ -441,8 +441,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/dropzone.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="177" column="31" selection-start-line="177" selection-start-column="31" selection-end-line="177" selection-end-column="31" />
+        <state relative-caret-position="285">
+          <caret line="179" column="39" selection-start-line="179" selection-start-column="39" selection-end-line="179" selection-end-column="39" />
           <folding />
         </state>
       </provider>
