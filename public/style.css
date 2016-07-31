@@ -67,10 +67,12 @@ h1 {
 }
 
 #customerTable {
+    width: 90%;
     margin: auto;
 }
 
 header {
+    height: 50px;
     padding: 10px;
     margin-bottom: 10px;
 }
