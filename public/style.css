@@ -67,7 +67,7 @@ h1 {
 }
 
 #customerTable {
-
+    text-align: center;
 }
 
 th {
@@ -77,4 +77,5 @@ th {
 td {
     border-top: 3px solid black;
     border-right: 3px solid black;
+    padding: 3px;
 }
