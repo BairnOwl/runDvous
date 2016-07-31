@@ -70,11 +70,11 @@ window.addEventListener('load', function() {
         if (status == 1) {
             $('#' + phoneNumber).append('<td class="status1">YES</td>');
         } else if (status == 2) {
-            $('#' + phoneNumber).append('<td class="status2">NO, come back another day</td>');
+            $('#' + phoneNumber).append('<td class="status2">NO, leave outside</td>');
         } else if (status == 3) {
-            $('#' + phoneNumber).append('<td class="status3">NO, leave outside</td>');
+            $('#' + phoneNumber).append('<td class="status3">NO, leave with neighbor</td>');
         } else if (status == 4) {
-            $('#' + phoneNumber).append('<td class="status4">NO, leave at neighbor</td>');
+            $('#' + phoneNumber).append('<td class="status4">NO, come back another day</td>');
         }
     });
 

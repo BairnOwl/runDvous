@@ -99,8 +99,8 @@ function readInfo(filePath) {
 function sendInitialMessage(name, phoneNumber, ETA) {
     client.messages.create({
         body: 'Hi, ' + name + '! Your package will arrive today around ' + ETA + '. ' +
-        'Are you home at this time? Reply: 1 for YES, 2 for NO (come back another day), ' +
-        '3 for NO (leave my package outside), and 4 for NO (send to my neighbor)',
+        'Are you home at this time? \n Reply: \n 1 for YES \n 2 for NO, please leave my package outside \n' +
+        '\n3 for NO, please send to my neighbor\n4 for NO, please come back another day',
         to: phoneNumber,  // Text this number
         from: '+14017533904' // From a valid Twilio number
     }, function (err, message) {
