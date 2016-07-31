@@ -70,6 +70,11 @@ h1 {
 
 }
 
-th, td {
-    border: 5px solid black;
+th {
+    border-bottom: 5px solid black;
+}
+
+td {
+    border-top: 3px solid black;
+    border-right: 3px solid black;
 }
