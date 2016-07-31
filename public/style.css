@@ -67,15 +67,18 @@ h1 {
 }
 
 #customerTable {
-    text-align: center;
+
 }
 
 th {
     border-bottom: 5px solid black;
+    text-align: center;
+    padding: 5px;
 }
 
 td {
     border-top: 3px solid black;
     border-right: 3px solid black;
-    padding: 3px;
+    padding: 5px 2px 5px 2px;
+    text-align: center;
 }
