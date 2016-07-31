@@ -57,6 +57,10 @@ h1 {
     margin-bottom: 3%;
 }
 
+#particles-js {
+    height: 100vh;
+}
+
 /* Schedule page */
 
 #scheduleZone {
