@@ -72,7 +72,7 @@ h1 {
 }
 
 header {
-    height: 50px;
+    min-height: 100px;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -96,6 +96,6 @@ td {
     float: left;
 }
 
-#sendMessages {
-
+.statusColumn {
+    min-width: 50px;
 }
