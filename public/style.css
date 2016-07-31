@@ -94,12 +94,14 @@ td {
     height: 10%;
     width: 7.5%;
     float: left;
+    margin-right: 10px;
 }
 
 .statusColumn {
-    width: 100px;
+    width: 200px;
 }
 
 #sendMessages {
     float: right;
+    margin-right: 50px;
 }
