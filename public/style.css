@@ -99,3 +99,7 @@ td {
 .statusColumn {
     min-width: 50px;
 }
+
+#sendMessages {
+    float: right;
+}
