@@ -67,8 +67,8 @@ app.post('/incoming', function(req, res) {
 
     if (!isNaN(choice)) {
         if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
-            console.log('sending to client');
             clientSocket.emit('addStatus', phoneNumber, choice);
+            sendSuccessMessage(phoneNumber);
         } else {
             sendErrorMessage(phoneNumber);
         }
@@ -99,8 +99,8 @@ function readInfo(filePath) {
 function sendInitialMessage(name, phoneNumber, ETA) {
     client.messages.create({
         body: 'Hi, ' + name + '! Your package will arrive today around ' + ETA + '. ' +
-        'Are you home at this time? \n Reply: \n 1 for YES \n 2 for NO, please leave my package outside \n' +
-        '\n3 for NO, please send to my neighbor\n4 for NO, please come back another day',
+        'Are you home at this time?\nReply:\n1 for YES\n2 for NO, please leave my package outside\n' +
+        '3 for NO, please send to my neighbor\n4 for NO, please come back another day',
         to: phoneNumber,  // Text this number
         from: '+14017533904' // From a valid Twilio number
     }, function (err, message) {
@@ -108,16 +108,18 @@ function sendInitialMessage(name, phoneNumber, ETA) {
             console.error(err.message);
         }
     });
+}
 
-    // client.messages.create({
-    //     body: 'Are you home at this time? Reply: 1 for YES, 2 for NO (come back another day), 3 for NO (leave my package outside), and 4 for NO (send to my neighbor)',
-    //     to: phoneNumber,  // Text this number
-    //     from: '+14017533904' // From a valid Twilio number
-    // }, function (err, message) {
-    //     if (err) {
-    //         console.error(err.message);
-    //     }
-    // });
+function sendSuccessMessage(phoneNumber) {
+    client.messages.create({
+        body: 'Thank you! Your package is on its way. :)',
+        to: phoneNumber,
+        from: '+14017533904'
+    }, function (err, message) {
+        if (err) {
+            console.error(err.message);
+        }
+    });
 }
 
 function sendErrorMessage(phoneNumber) {
