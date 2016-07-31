@@ -105,3 +105,7 @@ td {
     float: right;
     margin-right: 50px;
 }
+
+#title {
+    vertical-align: center;
+}
